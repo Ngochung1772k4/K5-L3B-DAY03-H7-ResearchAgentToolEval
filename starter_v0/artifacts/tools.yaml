@@ -16,12 +16,19 @@
 tools:
   # ---------------- Core tools ----------------
   - name: clarify
-    description: "Gửi một câu hỏi cho người dùng."
+    description: >-
+      Ask the user for missing information or confirmation, and always set
+      response_type explicitly. Use response_type="text" to request missing
+      details such as an account handle or URL. When the user asks to send or
+      publish without confirmation, first use response_type="yes_no" to ask
+      whether they want to proceed. This confirms intent only: do not call send
+      until the exact final text is shown to the user and that exact text is
+      explicitly confirmed.
     parameters:
       type: object
       properties:
         question: {type: string, default: "", description: "Câu hỏi"}
-        response_type: {type: string, enum: [text, yes_no, choice], default: "text", description: "Kiểu trả lời"}
+        response_type: {type: string, enum: [text, yes_no, choice], default: "text", description: "Always set explicitly: use text for missing details, yes_no to confirm intent for an external action, and choice when presenting options."}
         options: {type: array, default: [], items: {type: string}, description: "Các lựa chọn"}
       required: [question]
 
@@ -45,7 +52,11 @@ tools:
       required: [query]
 
   - name: lookup
-    description: "Tra cứu thông tin trên internet."
+    description: >-
+      Search the public web. Use topic="news" for current or recent-news
+      searches and topic="general" for other web searches. Keep query to the
+      user's subject; do not append "news". For example, a request for AI news
+      today uses query="AI", topic="news", timeframe="day".
     parameters:
       type: object
       properties:

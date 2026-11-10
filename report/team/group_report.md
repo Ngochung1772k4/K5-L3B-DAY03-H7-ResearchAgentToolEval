@@ -62,10 +62,10 @@ Lấy từ `starter_v0/artifacts/version_log.csv` và `starter_v0/runs/*.json`. 
 
 | Version | Changed Artifact | Hypothesis | Metric Before | Metric After | Run File |
 |---|---|---|---:|---:|---|
-| v0 | baseline |  |  |  |  |
-| v1 |  |  |  |  |  |
-| v2 |  |  |  |  |  |
-| v3 |  |  |  |  |  |
+| v0 | baseline | Đo hành vi starter trước tối ưu | — | 0.70 (14/20) | `runs/v0_B_base_openrouter_20261110T174808932044.json` |
+| v1 | `system_prompt.md` | Hỏi lại khi thiếu thông tin và xác nhận trước khi gửi | 0.70 | 0.85 (17/20) | `runs/v1_B_base_openrouter_20261110T175428175457.json` |
+| v2 | `tools.yaml` | Mô tả rõ `response_type` sẽ giảm lỗi arguments của `clarify` | 0.85 | 0.90 (18/20) | `runs/v2_B_base_openrouter_20261110T175938790446.json` |
+| v3 | `tools.yaml` | Làm rõ mapping arguments của `clarify` và `lookup` sẽ giảm lỗi tham số | 0.90 | 0.95 (19/20) | `runs/v3_B_base_openrouter_20261110T180412507897.json` |
 
 ### B2. Failure Analysis
 
@@ -73,7 +73,12 @@ Lấy từ `results[*].result.failures` trong run JSON.
 
 | Case ID | Failure Type | Actual Tool Calls | What Failed | Fix |
 |---|---|---|---|---|
-|  |  |  |  |  |
+| R08_out_of_scope | out_of_scope | `send` | Gọi `send` cho câu hỏi toán ngoài phạm vi, thay vì từ chối không gọi tool. | Thêm quy tắc từ chối yêu cầu ngoài phạm vi, không gọi tool. |
+| R10_missing_handle | missing_info | `timeline(screenname="sama")` | Đoán handle Sam Altman dù người dùng chưa nêu tài khoản. | Gọi `clarify` để hỏi người dùng muốn xem tài khoản nào. |
+| R11_missing_url | missing_info | `fetch(url="https://example.com/article")` | Bịa URL vì người dùng chưa cung cấp liên kết. | Gọi `clarify` xin URL; không tự đoán URL. |
+| R12_confirm_before_send | wrong_boundary | `send` | Gọi `send` khi chưa xác nhận chính xác nội dung với người dùng. | Dùng `clarify` hỏi yes/no; chỉ gọi `send` sau khi được xác nhận. |
+| R13_parallel_web_and_tweets | wrong_arg_value | `lookup(query="AI news", timeframe="day")`; `social_search(query="AI")` | `lookup` đổi query từ `AI` thành `AI news` và thiếu `topic="news"`. | Giữ query là `AI`, đặt `topic="news"` khi tìm tin thời sự. |
+| R14_out_of_scope_coding | out_of_scope | `send` | Dùng `send` để trả lời yêu cầu viết code ngoài phạm vi. | Từ chối yêu cầu ngoài phạm vi; chỉ dùng `send` cho việc đăng/gửi sau xác nhận. |
 
 ### B3. Team Eval Cases
 
