@@ -134,3 +134,39 @@ tools:
         max_pages: {type: integer, default: 5, description: "Số trang"}
         max_chars: {type: integer, default: 8000, description: "Số ký tự"}
       required: [arxiv_url]
+
+  - name: dedupe_sources
+    description: >-
+      Remove duplicate sources from research results already available, using
+      URLs with fragments and tracking parameters removed for comparison.
+      Use only when the user asks to merge or remove duplicate sources, such
+      as before formatting a digest. Keep the first item's original content
+      and the original order. Preserve meaningful query parameters. Do not use
+      to search for new sources, fetch pages, or format a digest. Returns
+      tool="dedupe_sources", items and duplicate_count on success, or tool,
+      error and message for invalid input.
+    parameters:
+      type: object
+      additionalProperties: false
+      properties:
+        items:
+          type: array
+          description: >-
+            Existing research items to deduplicate. Each item must be an object
+            with an absolute HTTP(S) URL; all other fields are preserved.
+            Empty lists are allowed. Invalid items return an error dict.
+          items:
+            type: object
+            properties:
+              url:
+                type: string
+                format: uri
+                minLength: 1
+                pattern: "^[Hh][Tt][Tt][Pp][Ss]?://"
+                description: >-
+                  Absolute HTTP(S) source URL. Fragments and utm_*, fbclid,
+                  gclid, dclid, msclkid, mc_cid and mc_eid query parameters
+                  are ignored only for matching; meaningful queries are kept.
+            required: [url]
+            additionalProperties: true
+      required: [items]
