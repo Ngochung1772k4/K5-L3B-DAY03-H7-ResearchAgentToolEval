@@ -27,7 +27,9 @@ Research Agent searches the public web and social posts, reads a specific URL or
 .\.venv\Scripts\python.exe -m streamlit run app.py
 ```
 
-**Local demo:** `http://127.0.0.1:8501` (local machine only; not a public deployment).
+**Public demo:** [Open Research Agent](https://k5-l3b-day03-h7-researchagenttooleval-mgmtbwyydqeyyfaytnfire.streamlit.app/).
+
+**Local demo:** `http://127.0.0.1:8501` (for local development).
 
 ### A2. Tool agent có
 
@@ -127,7 +129,7 @@ These files document complementary behavior, not one complete UI transcript: the
 |---|---|---|---|
 | New tool (`dedupe_sources`) | `starter_v0/tools/dedupe_sources/tool.py`, `TOOL.md`, `tools/__init__.py`, `artifacts/tools.yaml` | Deduplicates by normalized URL, keeps first occurrence and order, preserves meaningful query parameters. | URL matching only: it does not follow redirects or detect identical page content at different URLs. Invalid input returns an error dict and rejects the whole list. |
 | Unit and regression tests | `starter_v0/tests/test_tools_todo.py`, `starter_v0/tests/test_chat_transcripts.py`, `starter_v0/runs/pytest_postmerge_64a8fb1_20261111.txt` | Covers dedupe and bonus tools plus successful and failed-provider transcript persistence. Full suite after merge: 165 passed, 0 failed. | Tests use fake providers and mocked HTTP; external API availability is not covered by unit tests. |
-| UI and live transcript | `starter_v0/app.py`, `starter_v0/requirements.txt`, `starter_v0/transcripts/v3_openrouter_streamlit_20261111T115922053474.transcript.json`, `starter_v0/transcripts/v3_openrouter_streamlit_20261110T225954630476.transcript.json`, `starter_v0/transcripts/v3_openrouter_streamlit_20261110T192044246874.transcript.json`, `starter_v0/transcripts/v3_openrouter_20261110T191513477383.transcript.json` | Streamlit served HTTP 200 locally and supports chat/transcript download. A four-turn Streamlit AppTest transcript records a normal question, a missing-handle question followed by `@sama` and a successful timeline call, and a post request that invokes `clarify(response_type="yes_no")`. Earlier clean Streamlit and CLI transcripts provide additional live interaction evidence. | The new transcript was produced through Streamlit AppTest with live OpenRouter and timeline calls; the post request ends at `waiting_for_user`, and no `send` call was made. UI remains local-only; no public deployment. Earlier provider-error turns remain documented as failures, not successful answers. |
+| UI and live transcript | `starter_v0/app.py`, `starter_v0/requirements.txt`, `starter_v0/transcripts/v3_openrouter_streamlit_20261111T115922053474.transcript.json`, `starter_v0/transcripts/v3_openrouter_streamlit_20261110T225954630476.transcript.json`, `starter_v0/transcripts/v3_openrouter_streamlit_20261110T192044246874.transcript.json`, `starter_v0/transcripts/v3_openrouter_20261110T191513477383.transcript.json` | Streamlit supports chat/transcript download and the public app is available at the A1 link. A four-turn Streamlit AppTest transcript records a normal question, a missing-handle question followed by `@sama` and a successful timeline call, and a post request that invokes `clarify(response_type="yes_no")`. Earlier clean Streamlit and CLI transcripts provide additional interaction evidence. | The new transcript was produced through Streamlit AppTest with live OpenRouter and timeline calls; the post request ends at `waiting_for_user`, and no `send` call was made. The public demo URL returned HTTP 200 on 2026-11-11. Earlier provider-error turns remain documented as failures, not successful answers. |
 
 ### B5. Bonus Evidence
 

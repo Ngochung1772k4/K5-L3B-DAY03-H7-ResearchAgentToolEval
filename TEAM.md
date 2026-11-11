@@ -9,7 +9,7 @@
 - **Nhánh nộp:** `main`, đã nhận các thay đổi từ `feature/2a202603770-buingochung-cp1-2`.
 - **Merge:** PR #1 đã merge vào `main` tại `caea81e`; feature tip là `7e6a495`.
 - **Commit CP4–CP5:** `df4fe42` (UI/chat, Bùi Ngọc Hùng) và `64a8fb1` (hardening transcript, regression test, Phạm Minh Đức); cả hai đều có trong `main` qua PR #1.
-- **Demo:** group report hiện ghi URL local `http://127.0.0.1:8501`; link public chưa có.
+- **Demo public:** [Research Agent trên Streamlit](https://k5-l3b-day03-h7-researchagenttooleval-mgmtbwyydqeyyfaytnfire.streamlit.app/) (đã kiểm tra HTTP 200 ngày 2026-11-11).
 
 ## Thành viên
 
