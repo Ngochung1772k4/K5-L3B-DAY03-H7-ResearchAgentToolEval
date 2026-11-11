@@ -6,10 +6,8 @@
 - **Lớp:** L3B
 - **Repo nhóm:** `K5-L3B-DAY03-H7-ResearchAgentToolEval`
 - **URL repo:** [github.com/Ngochung1772k4/K5-L3B-DAY03-H7-ResearchAgentToolEval](https://github.com/Ngochung1772k4/K5-L3B-DAY03-H7-ResearchAgentToolEval)
-- **Nhánh nộp:** `main`, đã nhận các thay đổi từ `feature/2a202603770-buingochung-cp1-2`.
-- **Merge:** PR #1 đã merge vào `main` tại `caea81e`; feature tip là `7e6a495`.
-- **Commit CP4–CP5:** `df4fe42` (UI/chat, Bùi Ngọc Hùng) và `64a8fb1` (hardening transcript, regression test, Phạm Minh Đức); cả hai đều có trong `main` qua PR #1.
-- **Demo public:** [Research Agent trên Streamlit](https://k5-l3b-day03-h7-researchagenttooleval-mgmtbwyydqeyyfaytnfire.streamlit.app/) (đã kiểm tra HTTP 200 ngày 2026-11-11).
+- **Nhánh nộp:** `main`
+- **Demo public:** [Research Agent trên Streamlit](https://k5-l3b-day03-h7-researchagenttooleval-mgmtbwyydqeyyfaytnfire.streamlit.app/)
 
 ## Thành viên
 
