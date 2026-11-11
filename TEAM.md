@@ -6,9 +6,10 @@
 - **Lớp:** L3B
 - **Repo nhóm:** `K5-L3B-DAY03-H7-ResearchAgentToolEval`
 - **URL repo:** [github.com/Ngochung1772k4/K5-L3B-DAY03-H7-ResearchAgentToolEval](https://github.com/Ngochung1772k4/K5-L3B-DAY03-H7-ResearchAgentToolEval)
-- **Nhánh đang hoàn thiện:** `feature/2a202603770-buingochung-cp1-2`
-- **Commit CP4–CP5:** `df4fe42` (UI/chat, Bùi Ngọc Hùng) và `64a8fb1` (hardening transcript, regression test, Phạm Minh Đức; fast-forward merge vào nhánh này).
-- **Nhánh đã push:** `feature/2a202603770-buingochung-cp1-2`. Commit `d03674e` bổ sung CP4 eval, cập nhật báo cáo và lưu kết quả test sau merge. PR vào `main` và link demo public vẫn còn chờ.
+- **Nhánh nộp:** `main`, đã nhận các thay đổi từ `feature/2a202603770-buingochung-cp1-2`.
+- **Merge:** PR #1 đã merge vào `main` tại `caea81e`; feature tip là `7e6a495`.
+- **Commit CP4–CP5:** `df4fe42` (UI/chat, Bùi Ngọc Hùng) và `64a8fb1` (hardening transcript, regression test, Phạm Minh Đức); cả hai đều có trong `main` qua PR #1.
+- **Demo:** group report hiện ghi URL local `http://127.0.0.1:8501`; link public chưa có.
 
 ## Thành viên
 
@@ -36,7 +37,7 @@
 
 - **Phần việc:** CP4–CP5; tăng độ bền của lưu transcript và kiểm thử hồi quy.
 - **Đóng góp:** rà soát `write_transcript()`, ghi JSON qua file tạm rồi thay thế file đích; thêm hai regression test cho phản hồi thành công và lỗi provider. Phần UI/transcript ban đầu do Bùi Ngọc Hùng triển khai.
-- **Bằng chứng:** `report/team/2A202603758_PhamMinhDuc.md`, `starter_v0/chat.py`, `starter_v0/tests/test_chat_transcripts.py`, commit `64a8fb1` trên nhánh `feature/2a202603758-phamminhduc-cp4-5` (đã fast-forward merge local, push chờ).
+- **Bằng chứng:** `report/team/2A202603758_PhamMinhDuc.md`, `starter_v0/chat.py`, `starter_v0/tests/test_chat_transcripts.py`, commit `64a8fb1` trên nhánh `feature/2a202603758-phamminhduc-cp4-5`, đã được đưa vào nhánh nộp và merge qua PR #1.
 
 ## Báo cáo cá nhân
 
