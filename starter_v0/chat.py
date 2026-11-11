@@ -147,7 +147,14 @@ def run_model_tool_loop(
 def write_transcript(path: Path, transcript: dict[str, Any]) -> None:
     transcript["updated_at"] = now_iso()
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(transcript, ensure_ascii=False, indent=2, default=str), encoding="utf-8")
+    # Replace only a complete JSON document so an interrupted save cannot leave
+    # an exported transcript unreadable.
+    temporary_path = path.with_suffix(path.suffix + ".tmp")
+    temporary_path.write_text(
+        json.dumps(transcript, ensure_ascii=False, indent=2, default=str),
+        encoding="utf-8",
+    )
+    temporary_path.replace(path)
 
 
 def main() -> None:
