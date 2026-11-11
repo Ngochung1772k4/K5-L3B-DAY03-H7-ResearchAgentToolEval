@@ -8,7 +8,7 @@
 - **URL repo:** [github.com/Ngochung1772k4/K5-L3B-DAY03-H7-ResearchAgentToolEval](https://github.com/Ngochung1772k4/K5-L3B-DAY03-H7-ResearchAgentToolEval)
 - **Nhánh đang hoàn thiện:** `feature/2a202603770-buingochung-cp1-2`
 - **Commit CP4–CP5:** `df4fe42` (UI/chat, Bùi Ngọc Hùng) và `64a8fb1` (hardening transcript, regression test, Phạm Minh Đức; fast-forward merge vào nhánh này).
-- **Nhánh nộp dự kiến:** `feature/2a202603770-buingochung-cp1-2`. CP4 eval, báo cáo và test log đang được hoàn tất trên nhánh này; sau khi push, ghi commit chốt trong bản nộp cuối.
+- **Nhánh đã push:** `feature/2a202603770-buingochung-cp1-2`. Commit `d03674e` bổ sung CP4 eval, cập nhật báo cáo và lưu kết quả test sau merge. PR vào `main` và link demo public vẫn còn chờ.
 
 ## Thành viên
 
