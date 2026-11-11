@@ -27,13 +27,11 @@ def load_streamlit_secrets() -> None:
         return
 
     try:
-        secrets = st.secrets
+        for key, value in st.secrets.items():
+            if key not in os.environ and isinstance(value, (str, int, float, bool)):
+                os.environ[key] = str(value)
     except StreamlitSecretNotFoundError:
         return
-
-    for key, value in secrets.items():
-        if key not in os.environ and isinstance(value, (str, int, float, bool)):
-            os.environ[key] = str(value)
 
 
 def load_lab_env(root: Path) -> None:
