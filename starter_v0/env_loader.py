@@ -18,9 +18,28 @@ def load_dotenv(path: Path, *, override: bool = True) -> None:
             os.environ[key] = value
 
 
+def load_streamlit_secrets() -> None:
+    """Load Streamlit Community Cloud secrets for code that uses os.getenv."""
+    try:
+        import streamlit as st
+        from streamlit.errors import StreamlitSecretNotFoundError
+    except ImportError:
+        return
+
+    try:
+        secrets = st.secrets
+    except StreamlitSecretNotFoundError:
+        return
+
+    for key, value in secrets.items():
+        if key not in os.environ and isinstance(value, (str, int, float, bool)):
+            os.environ[key] = str(value)
+
+
 def load_lab_env(root: Path) -> None:
     external_path = os.getenv("DAY03_ENV_FILE")
     if external_path:
         load_dotenv(Path(external_path).expanduser())
-        return
-    load_dotenv(root / ".env")
+    else:
+        load_dotenv(root / ".env")
+    load_streamlit_secrets()
