@@ -9,6 +9,8 @@ import yaml
 # The imported function names are the underlying implementations (unchanged).
 from .clarify.tool import ask_user
 from .dedupe_sources.tool import dedupe_sources
+from .filter_sources.tool import filter_sources
+from .group_sources.tool import group_sources
 from .papers.tool import arxiv_search
 from .paper_text.tool import get_arxiv_paper_text
 from .timeline.tool import get_user_tweets
@@ -18,6 +20,7 @@ from .policy.tool import search_company_policy
 from .social_search.tool import search_tweets
 from .send.tool import send_telegram
 from .lookup.tool import web_search
+from .rank_sources.tool import rank_sources
 
 
 # NOTE (starter_v0): tool names here are intentionally vague. These keys are the
@@ -37,8 +40,9 @@ TOOL_FUNCTIONS = {
     "papers": arxiv_search,
     "paper_text": get_arxiv_paper_text,
     "dedupe_sources": dedupe_sources,
-    # TODO CP3 (student): register your new tool here, e.g. "my_tool": my_tool_function,
-    # then declare it in artifacts/tools.yaml and run `pytest tests/test_tool_contract.py`.
+    "rank_sources": rank_sources,
+    "filter_sources": filter_sources,
+    "group_sources": group_sources,
 }
 
 
