@@ -1,0 +1,214 @@
+{
+  "transcript_id": "v3_openrouter_streamlit_20261111T115922053474",
+  "version": "v3",
+  "artifact_version": "v3+p6bdbfff17da6+te1336038a300",
+  "prompt_hash": "6bdbfff17da6620fbd285094bdadf44c33ce0f89a03fd2d3e6fddc6258d71985",
+  "tools_hash": "e1336038a300832c45a2338cc0c38ce0b373a113248d1cfe67cd2f43ba0f6e36",
+  "provider": "openrouter",
+  "model": "openai/gpt-4o-mini",
+  "system_prompt": "artifacts\\system_prompt.md",
+  "tools": "artifacts\\tools.yaml",
+  "ui": "streamlit",
+  "history_window": 5,
+  "max_tool_rounds": 4,
+  "created_at": "2026-11-11T11:59:22",
+  "updated_at": "2026-11-11T11:59:38",
+  "turns": [
+    {
+      "turn_index": 1,
+      "started_at": "2026-11-11T11:59:22",
+      "user": "What kinds of public web and social information can you research?",
+      "status": "answered",
+      "assistant_text": "I can research a variety of public web and social information, including:\n\n1. **Public Web Information:**\n   - General facts and information on various topics.\n   - Recent news articles and updates.\n   - Scholarly research papers and academic articles.\n\n2. **Social Media Information:**\n   - Recent posts from specific social media accounts.\n   - Public social media posts related to specific keywords or phrases.\n\nIf you have a specific topic or account in mind, feel free to ask!",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "I can research a variety of public web and social information, including:\n\n1. **Public Web Information:**\n   - General facts and information on various topics.\n   - Recent news articles and updates.\n   - Scholarly research papers and academic articles.\n\n2. **Social Media Information:**\n   - Recent posts from specific social media accounts.\n   - Public social media posts related to specific keywords or phrases.\n\nIf you have a specific topic or account in mind, feel free to ask!",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [],
+      "ended_at": "2026-11-11T11:59:26"
+    },
+    {
+      "turn_index": 2,
+      "started_at": "2026-11-11T11:59:26",
+      "user": "Show me recent posts from that account.",
+      "status": "answered",
+      "assistant_text": "Which account are you referring to? Please provide the account handle or name so I can fetch the recent posts for you.",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "Which account are you referring to? Please provide the account handle or name so I can fetch the recent posts for you.",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [],
+      "ended_at": "2026-11-11T11:59:27"
+    },
+    {
+      "turn_index": 3,
+      "started_at": "2026-11-11T11:59:27",
+      "user": "Use @sama and show 2 posts.",
+      "status": "answered",
+      "assistant_text": "Here are the two most recent posts from @sama:\n\n1. **Post Date:** Thu Nov 05 22:34:04 +0000 2026  \n   **Content:** RT @fouadmatin: Today’s GPT-6 Cyber release is a meaningful step for defenders: stronger vulnerability research and better alignment. We’ve…  \n   **Metrics:** 53 Retweets, 0 Favorites, 47,803 Views  \n   **Link:** [View Post](https://x.com/sama/status/2118471941002842341)\n\n2. **Post Date:** Wed Nov 04 01:55:21 +0000 2026  \n   **Content:** RT @thsottiaux: Day 25/  \n   We are doubling all usage limits for all Pro 100/200/500 tiers and Business Premium, effective today.  \n   **Metrics:** 2,700 Retweets, 0 Favorites, 42,144 Views  \n   **Link:** [View Post](https://x.com/sama/status/2117797818756952416)\n\nLet me know if you need more information!",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "timeline",
+              "args": {
+                "screenname": "sama",
+                "limit": 2
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "timeline",
+              "args": {
+                "screenname": "sama",
+                "limit": 2
+              },
+              "result": {
+                "tool": "get_user_tweets",
+                "screenname": "sama",
+                "items": [
+                  {
+                    "title": "RT @fouadmatin: Today’s GPT-6 Cyber release is a meaningful step for defenders: stronger vulnerability research and bett",
+                    "summary": "RT @fouadmatin: Today’s GPT-6 Cyber release is a meaningful step for defenders: stronger vulnerability research and better alignment. We’ve…",
+                    "url": "https://x.com/sama/status/2118471941002842341",
+                    "source": "@sama",
+                    "date": "Thu Nov 05 22:34:04 +0000 2026",
+                    "metrics": {
+                      "favorites": 0,
+                      "retweets": 53,
+                      "views": "47803"
+                    }
+                  },
+                  {
+                    "title": "RT @thsottiaux: Day 25/",
+                    "summary": "RT @thsottiaux: Day 25/\n\nWe are doubling all usage limits for all Pro 100/200/500 tiers and Business Premium, effective today.\n\nWe heard yo…",
+                    "url": "https://x.com/sama/status/2117797818756952416",
+                    "source": "@sama",
+                    "date": "Wed Nov 04 01:55:21 +0000 2026",
+                    "metrics": {
+                      "favorites": 0,
+                      "retweets": 2700,
+                      "views": "42144"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": "Here are the two most recent posts from @sama:\n\n1. **Post Date:** Thu Nov 05 22:34:04 +0000 2026  \n   **Content:** RT @fouadmatin: Today’s GPT-6 Cyber release is a meaningful step for defenders: stronger vulnerability research and better alignment. We’ve…  \n   **Metrics:** 53 Retweets, 0 Favorites, 47,803 Views  \n   **Link:** [View Post](https://x.com/sama/status/2118471941002842341)\n\n2. **Post Date:** Wed Nov 04 01:55:21 +0000 2026  \n   **Content:** RT @thsottiaux: Day 25/  \n   We are doubling all usage limits for all Pro 100/200/500 tiers and Business Premium, effective today.  \n   **Metrics:** 2,700 Retweets, 0 Favorites, 42,144 Views  \n   **Link:** [View Post](https://x.com/sama/status/2117797818756952416)\n\nLet me know if you need more information!",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "timeline",
+          "args": {
+            "screenname": "sama",
+            "limit": 2
+          },
+          "result": {
+            "tool": "get_user_tweets",
+            "screenname": "sama",
+            "items": [
+              {
+                "title": "RT @fouadmatin: Today’s GPT-6 Cyber release is a meaningful step for defenders: stronger vulnerability research and bett",
+                "summary": "RT @fouadmatin: Today’s GPT-6 Cyber release is a meaningful step for defenders: stronger vulnerability research and better alignment. We’ve…",
+                "url": "https://x.com/sama/status/2118471941002842341",
+                "source": "@sama",
+                "date": "Thu Nov 05 22:34:04 +0000 2026",
+                "metrics": {
+                  "favorites": 0,
+                  "retweets": 53,
+                  "views": "47803"
+                }
+              },
+              {
+                "title": "RT @thsottiaux: Day 25/",
+                "summary": "RT @thsottiaux: Day 25/\n\nWe are doubling all usage limits for all Pro 100/200/500 tiers and Business Premium, effective today.\n\nWe heard yo…",
+                "url": "https://x.com/sama/status/2117797818756952416",
+                "source": "@sama",
+                "date": "Wed Nov 04 01:55:21 +0000 2026",
+                "metrics": {
+                  "favorites": 0,
+                  "retweets": 2700,
+                  "views": "42144"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "ended_at": "2026-11-11T11:59:36"
+    },
+    {
+      "turn_index": 4,
+      "started_at": "2026-11-11T11:59:36",
+      "user": "Request to post this exact message to our Telegram channel: \"Research Agent CP5 confirmation flow test.\" Ask me to confirm yes or no first. Do not send it yet.",
+      "status": "waiting_for_user",
+      "assistant_text": "Do you confirm the following message to be posted to the Telegram channel? \"Research Agent CP5 confirmation flow test.\"",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "clarify",
+              "args": {
+                "question": "Do you confirm the following message to be posted to the Telegram channel? \"Research Agent CP5 confirmation flow test.\"",
+                "response_type": "yes_no"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "clarify",
+              "args": {
+                "question": "Do you confirm the following message to be posted to the Telegram channel? \"Research Agent CP5 confirmation flow test.\"",
+                "response_type": "yes_no"
+              },
+              "result": {
+                "tool": "ask_user",
+                "question": "Do you confirm the following message to be posted to the Telegram channel? \"Research Agent CP5 confirmation flow test.\"",
+                "response_type": "yes_no",
+                "options": [],
+                "awaiting_user": true
+              }
+            }
+          ]
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "clarify",
+          "args": {
+            "question": "Do you confirm the following message to be posted to the Telegram channel? \"Research Agent CP5 confirmation flow test.\"",
+            "response_type": "yes_no"
+          },
+          "result": {
+            "tool": "ask_user",
+            "question": "Do you confirm the following message to be posted to the Telegram channel? \"Research Agent CP5 confirmation flow test.\"",
+            "response_type": "yes_no",
+            "options": [],
+            "awaiting_user": true
+          }
+        }
+      ],
+      "ended_at": "2026-11-11T11:59:38"
+    }
+  ]
+}
